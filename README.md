@@ -40,15 +40,14 @@ plt.tight_layout() #keeps axes names in same figure
 bubble_super_mega_and_simpe_plot(df, 20, cmap='bone_r', ylabel='Tax Group (# of genomes)', xlabel='Genes',alpha=0.05)
 # alpha = transparency
 #cmap= color palete see below
-```
  
-Recomended colors 
+#Recomended colors 
 
 cmap='bone_r'
 cmap='plasma'
 cmap='coolwarm_r'
  
- #cmap python = [color palettes](https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html)
-
+#cmap python = see https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
+```
 
 ---
