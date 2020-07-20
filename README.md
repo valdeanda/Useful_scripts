@@ -27,4 +27,4 @@ optional arguments:
   python3 bubble_chart.py  data_bubbleplot.tab -f  png -r 300
  ```
 
-<img src="https://valdeanda.github.io/Useful_scripts/data_bubbleplot.tab_bubbleplot.png" width="200" height="200" align="right">
+<img src="https://valdeanda.github.io/Useful_scripts/data_bubbleplot.tab_bubbleplot.png" width="400" height="300" align="right">
