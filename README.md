@@ -24,7 +24,7 @@ optional arguments:
                         [dpi].
  ```
  
- Running Bubble plot with example data
+ **Running Bubble plot with example data**
  
  ```bash
   python3 bubble_chart.py  data_bubbleplot.tab -f  png -r 300
