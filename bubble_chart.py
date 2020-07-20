@@ -7,7 +7,8 @@
 # Purpose:     Program to creat a super easy bubble chart from a data frame
 #
 #
-# @uthors:      acph - dragopoot@gmail.com and  vda  - valdeanda@utexas.edu
+# @uthor:      acph - dragopoot@gmail.com
+# @mods :      vda  - valdeanda@utexas.edu
 # Created:     Jan, 2019
 # Copyright:   (c) acph 2017
 # Licence:     GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
@@ -33,7 +34,7 @@ parser.add_argument('filename',
                     help="Input file dataframe i.e  abundances profile")
 parser.add_argument('-im_format', '-f', default='pdf', type=str,
                     choices=['png', 'pdf', 'ps', 'eps', 'svg', 'tif', 'jpg'],
-                    help='''Output format for images [png].''')
+                    help='''Output format for images [pdf].''')
 parser.add_argument('--im_res', '-r', default=300, type=int,
                     help='''Output resolution for images in
                     dot per inch (dpi) [dpi].''',
@@ -96,4 +97,5 @@ sns.set(font_scale=1)
 sns.set_style("darkgrid")
 plt.figure(figsize=(21,12))
 plt.tight_layout()
-bubble_super_mega_and_simpe_plot(df, 20, cmap='coolwarm_r', ylabel='Bins', xlabel='CAZymes',alpha=0.05)
+bubble_super_mega_and_simpe_plot(df, 20, cmap='coolwarm_r', ylabel='Taxa', xlabel='Genes',alpha=0.05)
+
