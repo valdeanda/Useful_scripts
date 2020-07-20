@@ -89,11 +89,11 @@ def bubble_super_mega_and_simpe_plot(df, size_factor=25, xlabel='Columns',
     if cmap:
         plt.colorbar()
     plt.tight_layout()
-    plt.savefig(args.filename +"_bubbleplot." + args.im_format, dpi=args.im_res)
+    plt.savefig(args.filename +"_bubbleplot." + args.im_format, dpi=args.im_res,bbox_inches='tight')
 
 
 sns.set(font_scale=1)
 sns.set_style("darkgrid")
 plt.figure(figsize=(21,12))
 plt.tight_layout()
-bubble_super_mega_and_simpe_plot(df, 20, cmap='coolwarm_r', ylabel='Bins', xlabel='CAZymes',alpha=0.05,bbox_inches='tight')
+bubble_super_mega_and_simpe_plot(df, 20, cmap='coolwarm_r', ylabel='Bins', xlabel='CAZymes',alpha=0.05)
