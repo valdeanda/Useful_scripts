@@ -183,7 +183,7 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (k
 ```
 ---
 
-### Histogram of total number of sequences in a large genomic datase 
+### Histogram of total number of sequences in a large genomic dataset 
 
 <img src="https://valdeanda.github.io/Useful_scripts/seq.png" width="400" height="300" align="right">
 
