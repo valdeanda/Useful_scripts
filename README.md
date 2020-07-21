@@ -82,7 +82,24 @@ cmap='coolwarm_r'
 
 
 ```bash
-python3 heatmap.py data_heatmap.tsv
+python3 heatmap.py -h
+
+usage: heatmap.py [-h] [-f {png,pdf,ps,eps,svg,tif,jpg}] [-r dpi] filename
+
+ This script create a cluster map
+
+positional arguments:
+  filename              Input file derived mebs_output with classification
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f {png,pdf,ps,eps,svg,tif,jpg}, --im_format {png,pdf,ps,eps,svg,tif,jpg}
+                        Output format for images [png].
+  -r dpi, --im_res dpi  Output resolution for images in dot per inch (dpi)
+                        [dpi].
+
+Example:
+    $  python3 heatmap.py data.heatmap.tsv
 ```
 
 ---
