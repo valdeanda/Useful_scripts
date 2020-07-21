@@ -1,8 +1,8 @@
-# Useful_scripts
+# Useful scripts
 
 This repository contains scripts that I've developed with my collaborator [Cesar Poot](https://github.com/acpooth) and useful tips/tricks/scripts I have picked up over the years.
 
-# Dependencies
+## Dependencies
 
 Before using any of the scripts make sure that you have install the following dependencies
 
@@ -17,7 +17,7 @@ sudo -H pip3 install -U scikit-learn
 
 ---
 
-## Bubble plot
+# Bubble plot
 
 <img src="https://valdeanda.github.io/Useful_scripts/data_bubbleplot.tab_bubbleplot.png" width="400" height="300" align="right">
 
@@ -69,13 +69,13 @@ cmap='coolwarm_r'
 
 Requires biopython
 
-`` bash
+```bash
 pip3 install biopython
 ```
 
 Script that is useful if you have a large fasta file and you want to split it into small files of the same size 
 
-```bash
+```python
 python3 split_fasta.py
 
 usage: split_fasta.py [-h] [-p PARTS] fastafile
