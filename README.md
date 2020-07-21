@@ -26,7 +26,7 @@ sudo -H pip3 install -U scikit-learn
 
 ---
 
-# Bubble plot
+## Bubble plot
 
 Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
 
@@ -74,7 +74,7 @@ cmap='coolwarm_r'
 #cmap python = see https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
 ```
 ---
-# Horizontal Barplot 
+## Horizontal Barplot 
 
 <img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="400" height="300" align="right">
 
@@ -99,7 +99,7 @@ barplot.R
 
 ---
 
-# Replace names from a phylogenetic tree 
+## Replace names from a phylogenetic tree 
 
 ```bash
 perl Replace_tree_names.pl mapping_file tree > renamed_tree
@@ -108,7 +108,7 @@ perl Replace_tree_names.pl mapping_file tree > renamed_tree
 
 ##  Fasta file processing 
 
-# Split fasta 
+## Split fasta 
 
 Requires biopython
 
@@ -137,7 +137,7 @@ optional arguments:
 ```
 ---
 
-### Generate sequence lengths  obtained from [here](https://www.danielecook.com/generate-fasta-sequence-lengths/)
+## Generate sequence lengths  obtained from [here](https://www.danielecook.com/generate-fasta-sequence-lengths/)
 
 ```bash
 cat file.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }' 
@@ -146,7 +146,7 @@ cat file.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) 
 awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }'
 ```
 ---
-### Convert your fasta into 1ne F
+## Convert your fasta into 1ne 
 
 ```
 From this 
@@ -167,14 +167,14 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (s
 ```
 
 ---
-### Average length of your fasta sequences
+## Average length of your fasta sequences
 
 ```perl
 perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' file.fa
 ```
 ---
 
-### Keep sequences of certain lenght 
+## Keep sequences of certain lenght 
 
 In this case we are keeping sequences >100 bp
 
@@ -183,7 +183,7 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (k
 ```
 ---
 
-### Histogram of total number of sequences in a large genomic dataset 
+## Histogram of total number of sequences in a large genomic dataset 
 
 <img src="https://valdeanda.github.io/Useful_scripts/seq.png" width="400" height="300" align="right">
 
@@ -196,6 +196,13 @@ grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file=
 
 ---
 
+## Script to remove sequences from a file 
+
+It requires a list of headeres to remove from a fasta file  
+
+```bash, highlight=TRUE, eval=FALSE}
+python3 remove_sequences.py file.fa sequence_to_remove.txt > file_filtered.fa 
+```
 
 
 
