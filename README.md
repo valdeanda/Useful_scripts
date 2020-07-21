@@ -78,7 +78,7 @@ cmap='coolwarm_r'
 
 # Heatmap 
 
-<img src="https://valdeanda.github.io/Useful_scripts/clustermap.png" width="300" height="400" align="right">
+<img src="https://valdeanda.github.io/Useful_scripts/clustermap.png" width="300" height="450" align="right">
 
 
 ```bash
@@ -105,7 +105,7 @@ Example:
 ---
 ## Horizontal Barplot 
 
-<img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="400" height="300" align="right">
+<img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="300" height="450" align="right">
 
 R script that was used to plot the number of achaeal genomes by taxonomy described in [Baker et al., 2020](https://www.nature.com/articles/s41564-020-0715-z)
 
