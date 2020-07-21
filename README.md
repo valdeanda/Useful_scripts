@@ -80,7 +80,7 @@ cmap='coolwarm_r'
 
 R script that was used to plot the number of achaeal genomes by taxonomy described in [Baker et al., 2020](https://www.nature.com/articles/s41564-020-0715-z)
 
-The input data data_barplot.tab, looks like this, the scripts keeps the specific order that you want your data to sorted 
+The input data data_barplot.tab, looks like this, the scripts keeps the specific order that you want your data to sorted.
 Dr. Craig Connolly provided valuable input to generate the script. 
 
 ```
