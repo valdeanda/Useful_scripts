@@ -65,4 +65,32 @@ cmap='coolwarm_r'
 
 ---
 
-# Heatamap 
+# Split fasta 
+
+Requires biopython
+
+`` bash
+pip3 install biopython
+```
+Script that is useful if you have a large fasta file and you want to split it into small files of the same size 
+
+```bash
+python3 split_fasta.py
+
+usage: split_fasta.py [-h] [-p PARTS] fastafile
+
+Split a fasta file according in almost equal parts based on total base/residue
+count. Stores a numpy array that contains the lengths of the sequences in the
+file
+
+positional arguments:
+  fastafile             Fasta file to split
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PARTS, --parts PARTS
+                        Number of parts to slice the file [10]
+```
+
+
+
