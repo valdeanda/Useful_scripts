@@ -367,10 +367,10 @@ awk '{if (!$2) {print $1,"YourWords"} else {print $1, $2}}'  > file.tsv
 ## Download genomes from ncbi 
  
 
-**Genome browse overview***
+**Genome browse overview**
 https://www.ncbi.nlm.nih.gov/genome/browse/#!/overview/
 
-**Genbank assembly summary file
+**Genbank assembly summary file**
 
 ```bash
 wget htp://ftp.ncbi.nlm.nih.gov/genomes/genbank/assembly_summary_genbank.txt
