@@ -78,7 +78,7 @@ cmap='coolwarm_r'
 
 # Heatmap 
 
-<img src="https://valdeanda.github.io/Useful_scripts/clustermap.png" width="400" height="300" align="right">
+<img src="https://valdeanda.github.io/Useful_scripts/clustermap.png" width="300" height="400" align="right">
 
 
 ```bash
