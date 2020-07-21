@@ -1,6 +1,6 @@
 # Useful_scripts
 
-This repository contains scripts that I developed/modified from  my collaborator [Cesar Poot](https://github.com/acpooth) or useful tips/tricks I have picked up.
+This repository contains scripts that I've developed with my collaborator [Cesar Poot](https://github.com/acpooth) and useful tips/tricks/scripts I have picked up over the years.
 
 ---
 
