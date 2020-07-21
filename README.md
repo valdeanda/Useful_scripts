@@ -174,7 +174,7 @@ seqkit fx2tab --length --name --header-line file.fa >> file.lenght
 ```
 
 
-## Convert fasta into 1ne 
+## Convert fasta into 1 lners 
 
 ```
 From this 
