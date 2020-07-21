@@ -147,7 +147,14 @@ cat file.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) 
 ```bash
 awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }' file.fa
 ```
----
+
+The other option is using [Seqkit](https://bioinf.shenwei.me/seqkit/) 
+
+```bash
+seqkit fx2tab --length --name --header-line file.fa >> file.lenght 
+```
+
+
 ## Convert your fasta into 1ne 
 
 ```
@@ -176,6 +183,7 @@ perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=
 ```
 ---
 
+
 ## Keep sequences of certain lenght 
 
 In this case we are keeping sequences >100 bp
@@ -198,13 +206,26 @@ grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file=
 
 ---
 
-## Script to remove sequences from a file 
+## Remove fasta sequences from list of headers
 
 It requires a list of headeres to remove from a fasta file  
 
-```bash, highlight=TRUE, eval=FALSE}
+```bash
 python3 remove_sequences.py file.fa sequence_to_remove.txt > file_filtered.fa 
 ```
+---
 
+## Extract fasta sequences from list of headers
 
+**Option 1 [pullseq](https://github.com/bcthomas/pullseq)**
+
+```bash
+pullseq -i file.fa -n  sequences_to_extract.txt > extracted_sequences.fa
+```
+
+**Option 2 [samtools](http://www.htslib.org/)
+
+```bash
+cat sequences_to_extract.txt  | xargs -n 1 samtools faidx file.fa >> extracted_sequences.fa 
+```
 
