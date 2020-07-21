@@ -1,6 +1,15 @@
 # Useful scripts
 
-This repository contains scripts that I've developed with my collaborator [Cesar Poot](https://github.com/acpooth) and useful tips/tricks/scripts I have picked up over the years.
+This repository contains useful tips/tricks/scripts that I have picked up over the years. 
+The scripts written in 
+bash 
+awk
+perl 
+R
+python3
+
+Most of the python  scripts were written by my collaborator [Cesar Poot](https://github.com/acpooth) and modify it by me. 
+
 
 ## Dependencies
 
@@ -162,7 +171,15 @@ Let's suppose that you have thousands of genomes and you want to compare the tot
 grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file="stdin")); png("seq.png"); hist(data,xlab="secuences")'
 ```
 
+### Horizontal Barplot 
 
+<img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="400" height="300" align="right">
+
+R script that was used to plot the number of achaeal genomes by taxonomy described in [Baker et al., 2020](rdcu.be/b3WCn)
+
+```R
+barplot.R
+```
 
 
 
