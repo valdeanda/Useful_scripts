@@ -268,6 +268,7 @@ grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file=
 
 ---
 
+
 ## Remove fasta sequences from list of headers
 
 It requires a list of headeres to remove from a fasta file  
@@ -315,3 +316,50 @@ done 2> /dev/null \
 ```
 
 
+## Join files 
+
+Take a column of 1 file and another column from another file and create a new file with those columns
+No need for matching column 
+
+```bash
+paste <(awk '{print $1}' file1.txt ) <(awk '{print $2}' file2.txt ) > file3.txt
+```
+
+## Download genomes from a list ("ftp_GCA_download.txt") of ftp links
+
+```bash
+for next in $(cat ftp_GCA_download.txt); do wget  "$next"; done
+
+or you can do wget -i ftp_GCA_download.txt
+```
+## Print duplicates in a column ($1 = column 1)
+
+```bash
+awk 'x[$1]++ == 1 { print $1 " is duplicated"}'
+```
+
+## Cut columns from 1 file and create a new file with those columns
+
+```bash
+cut -f2,3 file1.txt > file2.txt
+```
+
+## Search "pattern" and add "replace_pattern" at the beginning of the line (^)
+
+```bash
+sed '/pattern/ s/^/replace_pattern/' file.txt
+```
+
+## Search "pattern" and replace the 2nd occurrence of it (/2') with "replace_pattern"
+
+```bash
+sed 's/pattern/replace_pattern/2' file.txt
+```
+
+## Verifying empty columns 
+
+In a file of 2 columns, if 2nd column of file is blank, print 1st column followed by "Your Words", otherwise print 1st and 2nd column, create new file of all this output
+
+```bash
+awk '{if (!$2) {print $1,"YourWords"} else {print $1, $2}}'  > file.tsv
+```
