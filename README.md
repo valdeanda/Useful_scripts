@@ -75,6 +75,17 @@ cmap='coolwarm_r'
 #cmap python = see https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
 ```
 ---
+
+# Heatmap 
+
+<img src="https://valdeanda.github.io/Useful_scripts/clustermap.png" width="400" height="300" align="right">
+
+
+```bash
+python3 heatmap.py data_heatmap.tsv
+```
+
+---
 ## Horizontal Barplot 
 
 <img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="400" height="300" align="right">
