@@ -202,7 +202,7 @@ awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ 
 seqkit fx2tab --length --name --header-line file.fa >> file.lenght 
 ```
 
-**Option3 samtools**
+**Option3 [samtools](http://www.htslib.org/)**
 
 ```bash
 samtools faidx file.fa  |  cut -f1-2 file.fa.fai > file.lenght.tab
