@@ -83,6 +83,12 @@ R script that was used to plot the number of achaeal genomes by taxonomy describ
 ```R
 barplot.R
 ```
+
+
+
+
+
+
 ---
 
 # Replace names from a phylogenetic tree 
