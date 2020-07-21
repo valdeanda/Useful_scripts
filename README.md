@@ -74,7 +74,7 @@ cmap='coolwarm_r'
 #cmap python = see https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
 ```
 ---
-### Horizontal Barplot 
+# Horizontal Barplot 
 
 <img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="400" height="300" align="right">
 
