@@ -80,13 +80,21 @@ cmap='coolwarm_r'
 
 R script that was used to plot the number of achaeal genomes by taxonomy described in [Baker et al., 2020](rdcu.be/b3WCn)
 
+The input data data_barplot.tab, looks like this, the scripts keeps the specific order that you want your data to sorted 
+Dr. Craig Connolly provided valuable input to generate the script. 
+
+```
+Phylum	Superphylum	Number of genomes
+Heimdallarchaeota	Asgard	66
+Lokiarchaeota 	Asgard	63
+Unclassified_Asgard	Asgard	37
+Thorarchaeota	Asgard	32
+Helarchaeota	Asgard	19
+```
+
 ```R
 barplot.R
 ```
-
-
-
-
 
 
 ---
