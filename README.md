@@ -69,7 +69,7 @@ cmap='coolwarm_r'
 
 Requires biopython
 
-`` bash
+```bash
 pip3 install biopython
 ```
 
