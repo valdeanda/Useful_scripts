@@ -228,4 +228,28 @@ pullseq -i file.fa -n  sequences_to_extract.txt > extracted_sequences.fa
 ```bash
 cat sequences_to_extract.txt  | xargs -n 1 samtools faidx file.fa >> extracted_sequences.fa 
 ```
+---
+## Get description of PFAM identifiers
+
+1. Create a list of PFAM identifiers 
+
+```bash
+head identifiers.txt
+
+PF13243
+PF13249
+PF02458
+```
+
+2. Run the following commands, originally created by [Dr. Carlos Cantalapiedra](https://github.com/Cantalapiedra) and incorporated in [MEBS](https://github.com/valdeanda/mebs)
+
+```bash
+cat identifieres.txt | while read  pfam; do
+desc=$(curl http://pfam.xfam.org/family/"$pfam"/desc | head -1);
+printf "$pfam\t";
+printf "$desc\n";
+done 2> /dev/null \
+> identifiers.desc.tab
+```
+
 
