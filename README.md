@@ -73,8 +73,26 @@ cmap='coolwarm_r'
  
 #cmap python = see https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
 ```
-
 ---
+### Horizontal Barplot 
+
+<img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="400" height="300" align="right">
+
+R script that was used to plot the number of achaeal genomes by taxonomy described in [Baker et al., 2020](rdcu.be/b3WCn)
+
+```R
+barplot.R
+```
+---
+
+# Replace names from a phylogenetic tree 
+
+```bash
+perl Replace_tree_names.pl mapping_file tree > renamed_tree
+```
+---
+
+# Fasta  files processing 
 
 # Split fasta 
 
@@ -104,16 +122,6 @@ optional arguments:
                         Number of parts to slice the file [10]
 ```
 ---
-
-# Replace names from a phylogenetic tree 
-
-```bash
-perl Replace_tree_names.pl mapping_file tree > renamed_tree
-```
----
-
-# Useful 1-lners multifasta processing 
-
 
 ### Generate sequence lengths  obtained from [here](https://www.danielecook.com/generate-fasta-sequence-lengths/)
 
@@ -174,15 +182,6 @@ grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file=
 
 ---
 
-### Horizontal Barplot 
-
-<img src="https://valdeanda.github.io/Useful_scripts/barplot.png" width="400" height="300" align="right">
-
-R script that was used to plot the number of achaeal genomes by taxonomy described in [Baker et al., 2020](rdcu.be/b3WCn)
-
-```R
-barplot.R
-```
 
 
 
