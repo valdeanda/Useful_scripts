@@ -247,6 +247,14 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (k
 ```
 ---
 
+## Change the headers with the name of the name of fasta file
+
+```perl
+ perl -lne 'if(/^>(\S+)/){ print ">$ARGV $1"} else{ print }' file.fa > file_renamed.fa
+```
+
+---
+
 ## Histogram of total number of sequences in a large genomic dataset 
 
 <img src="https://valdeanda.github.io/Useful_scripts/seq.png" width="400" height="300" align="right">
