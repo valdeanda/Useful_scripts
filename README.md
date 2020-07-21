@@ -72,6 +72,7 @@ Requires biopython
 `` bash
 pip3 install biopython
 ```
+
 Script that is useful if you have a large fasta file and you want to split it into small files of the same size 
 
 ```bash
@@ -91,6 +92,6 @@ optional arguments:
   -p PARTS, --parts PARTS
                         Number of parts to slice the file [10]
 ```
-
+---
 
 
