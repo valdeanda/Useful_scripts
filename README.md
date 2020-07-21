@@ -75,7 +75,7 @@ pip3 install biopython
 
 Script that is useful if you have a large fasta file and you want to split it into small files of the same size 
 
-```bash
+```python
 python3 split_fasta.py
 
 usage: split_fasta.py [-h] [-p PARTS] fastafile
