@@ -99,3 +99,52 @@ optional arguments:
 ```bash
 perl Replace_tree_names.pl mapping_file tree > renamed_tree
 ```
+---
+
+# Useful 1-lners multifasta processing 
+
+
+### Generate sequence lengths  obtained from [here](https://www.danielecook.com/generate-fasta-sequence-lengths/)
+
+```bash
+cat file.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }' 
+```
+```bash
+awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }'
+```
+
+
+### Convert your fasta into 1ne F
+
+```
+From this 
+
+> header 1
+ATGCAATGCATG
+ATGCCCGGTAGT
+TTATAGAGATAG
+
+to this 
+
+> header 1 
+ATGCAATGCATGATGCCCGGTAGTTTATAGAGATAG
+```
+
+```perl
+perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' file.fa > file1ne.fa 
+```
+
+
+### Average length of your fasta sequences
+
+```perl
+perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }'
+```
+
+### Keep sequences of certain lenght 
+
+In this case we are keeping sequences >100 bp
+
+```perl
+perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(length($fa{$s})>100) }}'
+```
