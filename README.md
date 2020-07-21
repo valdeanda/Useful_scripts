@@ -196,6 +196,13 @@ grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file=
 
 ---
 
+# Script to remove sequences from a file 
+
+It requires a list of headeres to remove from a fasta file  
+
+```bash, highlight=TRUE, eval=FALSE}
+python3 remove_sequences.py file.fa sequence_to_remove.txt > file_filtered.fa 
+```
 
 
 
