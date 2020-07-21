@@ -94,4 +94,8 @@ optional arguments:
 ```
 ---
 
+# Replace names from a phylogenetic tree 
 
+```bash
+perl Replace_tree_names.pl mapping_file tree > renamed_tree
+```
