@@ -137,6 +137,24 @@ optional arguments:
 ```
 ---
 
+
+# Multifasta general stats 
+
+If you have a directory contanining fasta files (fa: either faa or fna) compute several stats, that are important when describing MAGs [See Table 1 Preprint De Anda et al., 2020](https://www.researchsquare.com/article/rs-39998/v1)
+
+
+```bash
+
+for i in *.fa; do seqkit stat $i  >> stats; done
+for i in *.fa ; do perl gc.pl $i >$i.gc.tab ; done
+
+#Sum the scaffold GC and get the average 
+
+for i in *.tab; do awk '{sum+= $2; n++ } END { if (n > 0) print sum / n; }' $i > $i.GC.average ; done
+ 
+```
+
+---
 ## Generate sequence length file from multifasta
 
 Obtained from [here](https://www.danielecook.com/generate-fasta-sequence-lengths/)
