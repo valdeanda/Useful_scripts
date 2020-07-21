@@ -1,12 +1,12 @@
 # Useful scripts
 
 This repository contains useful tips/tricks/scripts that I have picked up over the years. 
-The scripts written in 
-bash 
-awk
-perl 
-R
-python3
+The are scripts written in 
+- bash 
+- awk
+- perl 
+- R
+- python3
 
 Most of the python  scripts were written by my collaborator [Cesar Poot](https://github.com/acpooth) and modify it by me. 
 
