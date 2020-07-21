@@ -158,6 +158,8 @@ for i in *.tab; do awk '{sum+= $2; n++ } END { if (n > 0) print sum / n; }' $i >
 ---
 ## Generate sequence length file from multifasta
 
+**Option 1 awk**
+
 Obtained from [here](https://www.danielecook.com/generate-fasta-sequence-lengths/)
 
 ```bash
@@ -166,11 +168,16 @@ cat file.fa | awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) 
 ```bash
 awk '$0 ~ ">" {if (NR > 1) {print c;} c=0;printf substr($0,2,100) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }' file.fa
 ```
-
-The other option is using [Seqkit](https://bioinf.shenwei.me/seqkit/) 
+**Option 2 [Seqkit](https://bioinf.shenwei.me/seqkit/)**
 
 ```bash
 seqkit fx2tab --length --name --header-line file.fa >> file.lenght 
+```
+
+**Option3 samtools**
+
+```bash
+samtools faidx file.fa  |  cut -f1-2 file.fa.fai > file.lenght.tab
 ```
 
 
