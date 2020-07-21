@@ -363,3 +363,22 @@ In a file of 2 columns, if 2nd column of file is blank, print 1st column followe
 ```bash
 awk '{if (!$2) {print $1,"YourWords"} else {print $1, $2}}'  > file.tsv
 ```
+
+## Download genomes from ncbi 
+ 
+
+**Genome browse overview***
+https://www.ncbi.nlm.nih.gov/genome/browse/#!/overview/
+
+**Genbank assembly summary file
+
+```bash
+wget htp://ftp.ncbi.nlm.nih.gov/genomes/genbank/assembly_summary_genbank.txt
+```
+**Get the complete and latest genomes from assembly summary genbank**
+
+```bash
+awk -F "\t" '$12=="Complete Genome" && $11=="latest"{print $20}' assembly_summary_genbank.txt
+```
+
+
