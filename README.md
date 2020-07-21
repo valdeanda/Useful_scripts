@@ -137,7 +137,7 @@ optional arguments:
 ```
 ---
 
-## Generate sequence lengths  of fasta file
+## Generate sequence length file from multifasta
 
 Obtained from [here](https://www.danielecook.com/generate-fasta-sequence-lengths/)
 
@@ -155,7 +155,7 @@ seqkit fx2tab --length --name --header-line file.fa >> file.lenght
 ```
 
 
-## Convert your fasta into 1ne 
+## Convert fasta into 1ne 
 
 ```
 From this 
@@ -176,7 +176,7 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (s
 ```
 
 ---
-## Average length of your fasta sequences
+## Average length of multifasta
 
 ```perl
 perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' file.fa
@@ -229,7 +229,7 @@ pullseq -i file.fa -n  sequences_to_extract.txt > extracted_sequences.fa
 cat sequences_to_extract.txt  | xargs -n 1 samtools faidx file.fa >> extracted_sequences.fa 
 ```
 ---
-## Get description of PFAM identifiers
+## Description of PFAM identifiers
 
 1. Create a list of PFAM identifiers 
 
