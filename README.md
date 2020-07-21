@@ -2,6 +2,19 @@
 
 This repository contains scripts that I've developed with my collaborator [Cesar Poot](https://github.com/acpooth) and useful tips/tricks/scripts I have picked up over the years.
 
+# Dependencies
+
+Before using any of the scripts make sure that you have install the following dependencies
+
+```bash
+sudo apt-get install python3 python3-pip python3-matplotlib \
+ipython3-notebook python3-mpltoolkits.basemap
+sudo pip3 install -U pip
+sudo -H pip3 install --upgrade pandas numpy scipy seaborn 
+sudo -H pip3 install -U scikit-learn
+
+```
+
 ---
 
 ## Bubble plot
@@ -51,3 +64,5 @@ cmap='coolwarm_r'
 ```
 
 ---
+
+# Heatamap 
