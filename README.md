@@ -223,7 +223,7 @@ python3 remove_sequences.py file.fa sequence_to_remove.txt > file_filtered.fa
 pullseq -i file.fa -n  sequences_to_extract.txt > extracted_sequences.fa
 ```
 
-**Option 2 [samtools](http://www.htslib.org/)
+**Option 2 [samtools](http://www.htslib.org/)**
 
 ```bash
 cat sequences_to_extract.txt  | xargs -n 1 samtools faidx file.fa >> extracted_sequences.fa 
