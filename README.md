@@ -106,7 +106,7 @@ perl Replace_tree_names.pl mapping_file tree > renamed_tree
 ```
 ---
 
-# Fasta  files processing 
+##  Fasta file processing 
 
 # Split fasta 
 
