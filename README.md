@@ -140,7 +140,7 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (s
 ### Average length of your fasta sequences
 
 ```perl
-perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }'
+perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' file.fa
 ```
 
 ### Keep sequences of certain lenght 
@@ -153,10 +153,10 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (k
 
 ### Histogram of total number of sequences in a large genomic datase 
 
+<img src="https://valdeanda.github.io/Useful_scripts/seq.png" width="400" height="300" align="right">
 
 Let's suppose that you have thousands of genomes and you want to compare the total number of sequences in your genomic dataset. If all your genomes are  either .faa or .fna extension, you can use the following one-line command to count the number of sequences and generate a  histogram.  You can change the figure to pdf, just change pdf("seq.pdf");
 
-<img src="https://valdeanda.github.io/Useful_scripts/seq.png" width="400" height="300" align="right">
 
 ```bash
 grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file="stdin")); png("seq.png"); hist(data,xlab="secuences")'
