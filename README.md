@@ -19,6 +19,8 @@ sudo -H pip3 install -U scikit-learn
 
 # Bubble plot
 
+Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
+
 <img src="https://valdeanda.github.io/Useful_scripts/data_bubbleplot.tab_bubbleplot.png" width="400" height="300" align="right">
 
 ```bash
@@ -148,3 +150,19 @@ In this case we are keeping sequences >100 bp
 ```perl
 perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(length($fa{$s})>100) }}' file.fa > file100.fa
 ```
+
+### Histogram of total number of sequences in a large genomic datase 
+
+
+Let's suppose that you have thousands of genomes and you want to compare the total number of sequences in your genomic dataset. If all your genomes are  either .faa or .fna extension, you can use the following one-line command to count the number of sequences and generate a  histogram.  You can change the figure to pdf, just change pdf("seq.pdf");
+
+<img src="https://valdeanda.github.io/Useful_scripts/seq.png" width="400" height="300" align="right">
+
+```bash
+grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file="stdin")); png("seq.png"); hist(data,xlab="secuences")'
+```
+
+
+
+
+
