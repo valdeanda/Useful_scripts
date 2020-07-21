@@ -25,6 +25,7 @@ sudo -H pip3 install -U scikit-learn
 ```
 
 ---
+# Visualization
 
 ## Bubble plot
 
@@ -106,7 +107,7 @@ perl Replace_tree_names.pl mapping_file tree > renamed_tree
 ```
 ---
 
-##  Fasta file processing 
+#  Fasta file processing 
 
 ## Split fasta 
 
@@ -138,7 +139,7 @@ optional arguments:
 ---
 
 
-# Multifasta general stats 
+## Multifasta general stats 
 
 If you have a directory contanining fasta files (fa: either faa or fna) compute several stats, that are important when describing MAGs [See Table 1 Preprint De Anda et al., 2020](https://www.researchsquare.com/article/rs-39998/v1)
 
