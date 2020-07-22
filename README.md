@@ -381,4 +381,49 @@ wget htp://ftp.ncbi.nlm.nih.gov/genomes/genbank/assembly_summary_genbank.txt
 awk -F "\t" '$12=="Complete Genome" && $11=="latest"{print $20}' assembly_summary_genbank.txt
 ```
 
+## Download protein sequences by using a list of NCBI identifiers
+
+Conda is required to use Entrez this way.
+
+```bash
+#Create an environment in which you can add Entrez Direct
+conda create --name entrez
+
+#Activate this new environment
+conda activate entrez
+
+#Install Entrez
+conda install -c bioconda entrez-direct
+
+#Compile a list of Accession numbers from NCBI (PROTEINS)
+
+less list.txt
+
+ABO08866.1
+AFA39020.1
+AFA39042.1
+AFI78392.1
+AOQ24367.1
+APC08827.1
+ATY72478.1
+
+#Change file to comma separated instead of column
+cat list.txt | tr "\n" "," | sed 's/,$//' > list.csv 
+
+less list.csv 
+
+ABO08866.1,AFA39020.1,AFA39042.1,AFI78392.1,AOQ24367.1,APC08827.1,ATY72478.1
+
+#Make a usable script from the list
+
+sed 's/^/efetch -db protein -format fasta -id /' list.csv > list.sh
+
+less list.sh
+
+efetch -db protein -format fasta -id ABO08866.1,AFA39020.1,AFA39042.1,AFI78392.1,AOQ24367.1,APC08827.1,ATY72478.1
+
+#Run the new script
+bash list.sh > list.fa
+```
+
 
