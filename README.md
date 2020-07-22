@@ -356,6 +356,15 @@ sed '/pattern/ s/^/replace_pattern/' file.txt
 sed 's/pattern/replace_pattern/2' file.txt
 ```
 
+## Delete all characters after the first space
+
+This is very useful if you have a long header in fasta sequences and you want to get rid of all the characters that aren't useful 
+
+```bash
+sed 's/\s.*$//' file.fa > file2.fa
+```
+
+
 ## Verifying empty columns 
 
 In a file of 2 columns, if 2nd column of file is blank, print 1st column followed by "Your Words", otherwise print 1st and 2nd column, create new file of all this output
