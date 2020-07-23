@@ -301,7 +301,7 @@ pullseq -i file.fa -n  sequences_to_extract.txt > extracted_sequences.fa
 cat sequences_to_extract.txt  | xargs -n 1 samtools faidx file.fa >> extracted_sequences.fa 
 ```
 
-**Option 3 [bedtools](https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html)
+**Option 3 [bedtools](https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html)**
 
 Extract fasta with coordinates
 
