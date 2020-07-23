@@ -300,7 +300,16 @@ pullseq -i file.fa -n  sequences_to_extract.txt > extracted_sequences.fa
 ```bash
 cat sequences_to_extract.txt  | xargs -n 1 samtools faidx file.fa >> extracted_sequences.fa 
 ```
+
+**Option 3 
+
+Extract fasta with coordinates using [bedtools](https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html)
+
+sreformat fasta file.fa > file.reformat.fna
+bedtools getfasta -fi file.reformat.fna -bed sequences_to_extract_coordinates.tab -fo file_out.fa
+
 ---
+
 ## Description of PFAM identifiers
 
 1. Create a list of PFAM identifiers 
