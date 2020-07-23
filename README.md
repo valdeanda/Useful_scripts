@@ -273,9 +273,18 @@ grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file=
 
 It requires a list of headeres to remove from a fasta file  
 
+Option 1 python script 
+
 ```bash
 python3 remove_sequences.py file.fa sequence_to_remove.txt > file_filtered.fa 
 ```
+
+Option 2 grep
+
+```bash
+grep -v -f sequence_to_remove.txt file.fa  > file_filtered.fa 
+```
+
 ---
 
 ## Extract fasta sequences from list of headers
