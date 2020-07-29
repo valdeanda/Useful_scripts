@@ -455,7 +455,7 @@ efetch -db protein -format fasta -id ABO08866.1,AFA39020.1,AFA39042.1,AFI78392.1
 bash list.sh > list.fa
 ```
 
-# Run a jupyter notebook remotely
+## Run a jupyter notebook remotely
 
 Modified from [Huan Fan's github](http://fanhuan.github.io/en/2017/08/08/Jupyter-On-Remote-Server/)
 
@@ -484,9 +484,18 @@ jupyter notebook
    		Please enable it to proceed.  
  ```
  
-5. Just ingore it buy entering Q. Then your token would be given on the last line, some thing like: http://localhost:8888/?token=5640c991ffc0c0c6071e9f0d0100d7204e4b05a6d400c440
+5. Just ingore it buy entering Q. Then your token would be given on the last line, some thing like:
+
+```
+http://localhost:8888/?token=5640c991ffc0c0c6071e9f0d0100d7204e4b05a6d400c440
+```
 
 6.  Access from your local browser
-Replace 8888 with 8000, since the later is the port we opened for your local machine, so go to http://localhost:8000/?token=5640c991ffc0c0c6071e9f0d0100d7204e4b05a6d400c440 in your local browser and you are ready to go!
+Replace 8888 with 8000, since the later is the port we opened for your local machine, so go to
+
+```
+http://localhost:8000/?token=5640c991ffc0c0c6071e9f0d0100d7204e4b05a6d400c440 
+```
+on your local browser and you are ready to go!
 
 
