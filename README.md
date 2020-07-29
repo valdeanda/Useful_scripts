@@ -402,7 +402,7 @@ https://www.ncbi.nlm.nih.gov/genome/browse/#!/overview/
 **Genbank assembly summary file**
 
 ```bash
-wget htp://ftp.ncbi.nlm.nih.gov/genomes/genbank/assembly_summary_genbank.txt
+wget http://ftp.ncbi.nlm.nih.gov/genomes/genbank/assembly_summary_genbank.txt
 ```
 **Get the complete and latest genomes from assembly summary genbank**
 
