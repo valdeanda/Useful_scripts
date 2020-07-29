@@ -455,4 +455,38 @@ efetch -db protein -format fasta -id ABO08866.1,AFA39020.1,AFA39042.1,AFI78392.1
 bash list.sh > list.fa
 ```
 
+# Run a jupyter notebook remotely
+
+Modified from [Huan Fan's github](http://fanhuan.github.io/en/2017/08/08/Jupyter-On-Remote-Server/)
+
+1. Create an alias in your .bash_profile or .bashrc file with the information of your server
+
+```bash
+ alias server_jupyter='ssh -p XX  -L 8000:localhost:8888 user@XXX.X.XXX. XXX'
+```
+
+2. Once in your server set a secure password to acess your notebooks
+
+```
+jupyter notebook password
+```
+
+3. Start jupyter on the remote server
+
+```
+jupyter notebook 
+```
+
+4. It asks you whether you “Accepting one-time-token-authenticated connection from 127.0.0.1”. I answered ‘__A__laways’ but next time it kept asking me… Then it complains:
+
+```
+	Jupyter Notebook requires JavaScript.
+   		Please enable it to proceed.  
+ ```
+ 
+5. Just ingore it buy entering Q. Then your token would be given on the last line, some thing like: http://localhost:8888/?token=5640c991ffc0c0c6071e9f0d0100d7204e4b05a6d400c440
+
+6.  Access from your local browser
+Replace 8888 with 8000, since the later is the port we opened for your local machine, so go to http://localhost:8000/?token=5640c991ffc0c0c6071e9f0d0100d7204e4b05a6d400c440 in your local browser and you are ready to go!
+
 
