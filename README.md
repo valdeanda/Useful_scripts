@@ -508,3 +508,36 @@ or
 
 [NCBI](https://0-www-ncbi-nlm-nih-gov.linyanti.ub.bw/genome/annotation_prok/evidence/TIGR02691/)
 
+## Retrieve taxonomy categories from NCBI Taxonomy 
+
+After searching [several options](https://stackoverflow.com/questions/43867631/how-can-i-get-taxonomic-rank-names-from-taxid) including this [package in R](https://rdrr.io/cran/myTAI/man/taxid.html), I came across a super friendly to use plattfrom [taxonkit](https://github.com/shenwei356/taxonkit) - A Cross-platform and Efficient NCBI Taxonomy Toolkit
+
+After installing it,  download and uncompress these NCBI taxonoomy file
+
+ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz
+
+I downloaded and tar -xvzf the directory in /home/valdeanda/DB/TAXID 
+
+Your input file, in this case IDs.txt should look like this
+
+```
+02125
+1111708
+111780
+111781
+1147
+1284629
+165597
+1666905
+1807358
+1827144
+1920663
+1925591
+1933929
+```
+
+To run taxonkit run this
+
+```
+taxonkit lineage --data-dir /home/valdeanda/DB/TAXID/ IDs.txt > IDs.taxonomy.tab
+```
