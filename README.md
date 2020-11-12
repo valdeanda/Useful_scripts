@@ -498,4 +498,13 @@ http://localhost:8000/?token=5640c991ffc0c0c6071e9f0d0100d7204e4b05a6d400c440
 ```
 on your local browser and you are ready to go!
 
+## Download sequences from a TGRFAM markov model 
+
+You can use 
+
+[Uniprot](https://www.ebi.ac.uk/interpro/entry/tigrfams/TIGR02689/protein/UniProt/#table)
+ 
+or
+
+[NCBI](https://0-www-ncbi-nlm-nih-gov.linyanti.ub.bw/genome/annotation_prok/evidence/TIGR02691/)
 
