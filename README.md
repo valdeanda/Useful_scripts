@@ -541,3 +541,20 @@ To run taxonkit run this
 ```
 taxonkit lineage --data-dir /home/valdeanda/DB/TAXID/ IDs.txt > IDs.taxonomy.tab
 ```
+## Separate a long fasta-file into many separate single fasta sequences
+
+Many options are available here, the one that works for me is this one 
+
+```
+while read line
+do
+    if [[ ${line:0:1} == '>' ]]
+    then
+        outfile=${line:1:11}.fa 
+        echo $line > $outfile
+    else
+        echo $line >> $outfile
+    fi
+ ```
+ 
+done < myseq.fa
