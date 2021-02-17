@@ -1,4 +1,5 @@
 #GET_CT_CONTENT
+# Obtained from https://github.com/shaman-narayanasamy/IMP
 #!/usr/bin/perl -w
 ####################################################################################################
 ### Get GC Content                                                                               ###
