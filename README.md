@@ -8,7 +8,10 @@ The are scripts written in
 - R
 - python3
 
-Most of the python  scripts were written by my collaborator [Cesar Poot](https://github.com/acpooth) and modify it by me. 
+Some of the scripts have been written by my collaborators:
+[Cesar Poot UNAM](https://github.com/acpooth)
+[Bruno Contreras EMBL](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira). 
+[Carlos Cantalapiedra](http://www.cbgp.upm.es/index.php/es/?option=com_content&view=article&id=18&x=2436)
 
 
 ## Dependencies
