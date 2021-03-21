@@ -131,6 +131,7 @@ barplot.R
 ---
 ## Histogram distribution 
 
+<img src="https://valdeanda.github.io/Useful_scripts/hist.png" width="400" height="350" align="right">
 From a scaffold lenght tabular file 
 
 ```
@@ -150,9 +151,8 @@ name    length
 python3 hist.py lenght tab 
 ```
 
-Will create this plot
 
-<img src="https://valdeanda.github.io/Useful_scripts/hist.png" width="400" height="350" align="right">
+
 ---
 
 ## Replace names from a phylogenetic tree 
