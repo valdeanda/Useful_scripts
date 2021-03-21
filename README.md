@@ -128,7 +128,31 @@ Helarchaeota	Asgard	19
 barplot.R
 ```
 
+---
+## Histogram distribution 
 
+From a scaffold lenght tabular file 
+
+```
+name    length
+4484_scaffold_11179     2148
+4484_scaffold_8359      2609
+4484_scaffold_3616      4460
+4484_scaffold_7824      2728
+4484_scaffold_6736      3024
+4484_scaffold_9058      2482
+4484_scaffold_8774      2534
+4484_scaffold_4047      4173
+4484_scaffold_9826      2344
+```
+
+```bash
+python3 hist.py lenght tab 
+```
+
+Will create this plot
+
+<img src="https://valdeanda.github.io/Useful_scripts/hist.png" width="400" height="350" align="right">
 ---
 
 ## Replace names from a phylogenetic tree 
