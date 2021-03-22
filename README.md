@@ -132,7 +132,13 @@ barplot.R
 ## Histogram distribution 
 
 <img src="https://valdeanda.github.io/Useful_scripts/hist.png" width="400" height="350" align="right">
-From a scaffold lenght tabular file 
+From a scaffold lenght tabular file see below how to generate sequence length file from multifasta 
+Example:
+
+```
+seqkit fx2tab --length --name --header-line sample.contigs.fa >> sample.length.tab
+```
+
 
 ```
 name    length
@@ -148,7 +154,7 @@ name    length
 ```
 
 ```bash
-python3 hist.py lenght tab 
+python3 hist.py sample.lenght tab 
 ```
 
 
