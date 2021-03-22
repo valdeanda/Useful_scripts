@@ -134,7 +134,7 @@ barplot.R
 <img src="https://valdeanda.github.io/Useful_scripts/hist.png" width="400" height="350" align="right">
 From a scaffold lenght tabular file see below how to generate sequence length file from multifasta 
 
-Example:
+Compute the lenght 
 
 ```
 seqkit fx2tab --length --name --header-line sample.contigs.fa >> sample.length.tab
@@ -142,6 +142,8 @@ seqkit fx2tab --length --name --header-line sample.contigs.fa >> sample.length.t
 
 
 ```
+less sample.lenght.tab
+
 name    length
 4484_scaffold_11179     2148
 4484_scaffold_8359      2609
@@ -155,10 +157,24 @@ name    length
 ```
 
 ```bash
-python3 hist.py sample.lenght tab 
+
+usage: hist.py [-h] [-im_format {png,pdf,ps,eps,svg,tif,jpg}] [--im_res dpi]
+               filename
+
+positional arguments:
+  filename              lenght file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -im_format {png,pdf,ps,eps,svg,tif,jpg}, -f {png,pdf,ps,eps,svg,tif,jpg}
+                        Output format for images [pdf].
+  --im_res dpi, -r dpi  Output resolution for images in dot per inch (dpi)
+                        [dpi].
+
+Example:
+$  python3 histplot.py  sample.lenght tab
+
 ```
-
-
 
 ---
 
