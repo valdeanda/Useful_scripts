@@ -7,8 +7,9 @@ The are scripts written in
 - perl 
 - R
 - python3
+- 
+Many of the scripts have been written by my dear friends a collaborators:
 
-Some of the scripts have been written by my collaborators:
 [Cesar Poot UNAM](https://github.com/acpooth)
 [Bruno Contreras EMBL](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira). 
 [Carlos Cantalapiedra](http://www.cbgp.upm.es/index.php/es/?option=com_content&view=article&id=18&x=2436)
@@ -31,6 +32,8 @@ sudo -H pip3 install -U scikit-learn
 # Visualization
 
 ## Bubble plot
+
+Author: [Augusto César Poot Hernandez](https://www.researchgate.net/profile/Augusto-Poot-Hernandez),head of the Unidad de Bioinformática y Manejo de la Información of the Instituto de Fisiología Celular, UNAM
 
 Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
 
