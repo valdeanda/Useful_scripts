@@ -611,3 +611,21 @@ do
  ```
  
 done < myseq.fa
+
+
+
+## Find common sequences between 2 fasta files
+
+For example if you have cleaned a MAG and you want to know which scaffolds were removed use seqkit
+
+1. First get the common headers:
+
+```
+seqkit common -s file1.fa file2.fa|grep '>'|cut -c2- > common_ids
+``` 
+2. Get all sequences from fasta file1.fa that do not match the IDs in common_ids and store the result in file3.fa:
+
+```
+seqkit grep file1.fa -v -n -f common_ids -o file3.fa
+```
+3. Explore file3 which has the removed sequences in the clean bin
