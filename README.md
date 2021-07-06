@@ -10,9 +10,9 @@ The are scripts written in
 - 
 Many of the scripts have been written by my dear friends a collaborators:
 
-[Cesar Poot UNAM](https://github.com/acpooth)
-[Bruno Contreras EMBL](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira). 
-[Carlos Cantalapiedra](http://www.cbgp.upm.es/index.php/es/?option=com_content&view=article&id=18&x=2436)
+* [Cesar Poot UNAM](https://github.com/acpooth)
+* [Bruno Contreras EMBL](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira). 
+* [Carlos Cantalapiedra](http://www.cbgp.upm.es/index.php/es/?option=com_content&view=article&id=18&x=2436)
 
 
 ## Dependencies
@@ -629,3 +629,25 @@ seqkit common -s file1.fa file2.fa|grep '>'|cut -c2- > common_ids
 seqkit grep file1.fa -v -n -f common_ids -o file3.fa
 ```
 3. Explore file3 which has the removed sequences in the clean bin
+
+
+## Extract sequences were removed after a Bin cleaning step
+
+
+```
+#!/bin/bash
+while IFS= read -r line1 <&3 && IFS= read -r line2 <&4
+do ./seqkit grep OriginalBins/$line1 -v  -n -f $line2 -o $line1.extracted.fa
+done 3<OriginalBins.txt 4<OriginalBinsCommon.txt
+```
+
+
+```
+#!/bin/bash
+while IFS= read -r line1 <&3 && IFS= read -r line2 <&4
+do ./seqkit grep OriginalBins/$line1 -v  -n -f $line2 -o $line1.extracted.fa
+done 3<OriginalBins.txt 4<OriginalBinsCommon.txt
+```
+
+
+
