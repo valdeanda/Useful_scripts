@@ -635,7 +635,9 @@ seqkit grep file1.fa -v -n -f common_ids -o file3.fa
 
 ```
 #!/bin/bash
-while IFS= read -r line1 <&3 && IFS= read -r line2 <&4; do ./seqkit common -s  OriginalBins/$line1  CleanBins/$line2 |grep '>'| cut -c2-  > $line1.common.txt; done 3<OriginalBins.txt  4<CleanBins.txt
+while IFS= read -r line1 <&3 && IFS= read -r line2 <&4;
+do ./seqkit common -s  OriginalBins/$line1  CleanBins/$line2 |grep '>'| cut -c2-  > $line1.common.txt; 
+done 3<OriginalBins.txt  4<CleanBins.txt
 
 ```
 
