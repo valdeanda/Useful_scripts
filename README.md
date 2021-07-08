@@ -661,3 +661,9 @@ Look at the description of the files in the readme
 https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/taxdump_readme.txt
 ```
 
+## Retrieving NCBI Taxa IDs from refseq or GenBank assembly accession
+
+```
+#1. Install entrez
+sudo apt install ncbi-entrez-direct
+```
