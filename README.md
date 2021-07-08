@@ -648,5 +648,16 @@ do ./seqkit grep OriginalBins/$line1 -v  -n -f $line2 -o $line1.extracted.fa
 done 3<OriginalBins.txt 4<OriginalBinsCommon.txt
 ```
 
+## New taxonomy files available with lineage, type, and host information 
+last revised July 7th 2021
 
+```
+From 
+https://ncbiinsights.ncbi.nlm.nih.gov/2018/02/22/new-taxonomy-files-available-with-lineage-type-and-host-information/
+
+wget ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz
+
+Look at the description of the files in the readme
+https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/taxdump_readme.txt
+```
 
