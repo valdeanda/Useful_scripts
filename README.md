@@ -666,4 +666,20 @@ https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/taxdump_readme.txt
 ```
 #1. Install entrez
 sudo apt install ncbi-entrez-direct
+
+https://linsalrob.github.io/ComputationalGenomicsManual/Databases/NCBI_Edirect.html
+
+
+ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
+
+for i in `cat ./acc`; do zgrep -m1 -w  "$i" nucl_gb.accession2taxid.gz; done
+X68822  X68822.1        9731    1118
+Z18640  Z18640.1        9731    1121
+Z18643  Z18643.1        27615   1128
+```
+
+Biosample information
+
+```
+for i in `cat Biosample.tab` ; do wget -q -O - "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=biosample&id=$i" > $i ; done
 ```
