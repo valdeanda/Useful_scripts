@@ -683,3 +683,17 @@ Biosample information
 ```
 for i in `cat Biosample.tab` ; do wget -q -O - "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=biosample&id=$i" > $i ; done
 ```
+
+```
+#!/bin/bash
+for ACC in `cat Clean_Proteins_acc_number.txt`
+do
+   echo -n -e "$ACC\t"
+   curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&id=${ACC}&rettype=fasta&retmode=xml" |\
+   grep TSeq_taxid |\
+   cut -d '>' -f 2 |\
+   cut -d '<' -f 1 |\
+   tr -d "\n"
+   echo
+ done
+ ```
