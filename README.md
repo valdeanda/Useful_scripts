@@ -80,6 +80,8 @@ cmap='coolwarm_r'
  
 #cmap python = see https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
 ```
+
+
 ---
 
 ## Bubble plot
