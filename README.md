@@ -94,6 +94,7 @@ Author:  [Mirna Vazquez](https://mirnavazquez.netlify.app/)
 Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
 Library implemented in Rbims 
 
+Look at the the example input data for the script [here](https://github.com/valdeanda/Useful_scripts/input_bubblePlot_AbsoluteFinal_2.tsvinput_bubblePlot_AbsoluteFinal_2.tsv/)
 
 ```
 Requires
@@ -105,11 +106,9 @@ data_to_plot<-read_delim("input_bubblePlot_AbsoluteFinal_2.tsv",
   clean_names()
 
 ```
-If you want to use this function implemented in Rbims to explore metabolism annotation in genomes or MAGs, see [rbims package](https://github.com/mirnavazquez/RbiMs)
 
+If you want to use this graph to explore metabolism annotation in genomes or MAGs, see [rbims package](https://github.com/mirnavazquez/RbiMs)
 
-
-Look at the the example input data for the script [here](https://github.com/valdeanda/Useful_scripts/input_bubblePlot_AbsoluteFinal_2.tsvinput_bubblePlot_AbsoluteFinal_2.tsv/)
 
 ---
 
