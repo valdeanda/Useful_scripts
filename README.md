@@ -113,7 +113,7 @@ If you want to use this graph to explore metabolism annotation in genomes or MAG
 ---
 
 
-# Heatmap 
+## Heatmap 
 
 <img src="https://valdeanda.github.io/Useful_scripts/clustermap.png" width="300" height="450" align="right">
 
