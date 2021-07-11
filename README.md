@@ -33,7 +33,7 @@ sudo -H pip3 install -U scikit-learn
 
 ## Bubble plot
 
-Author: [Augusto César Poot Hernandez](https://www.researchgate.net/profile/Augusto-Poot-Hernandez),head of the Unidad de Bioinformática y Manejo de la Información of the Instituto de Fisiología Celular, UNAM
+Author:  [Augusto César Poot Hernandez](https://www.researchgate.net/profile/Augusto-Poot-Hernandez),head of the Unidad de Bioinformática y Manejo de la Información of the Instituto de Fisiología Celular, UNAM
 
 Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
 
@@ -82,6 +82,19 @@ cmap='coolwarm_r'
 ```
 ---
 
+## Bubble plot
+
+Author:  [Mirna Vazquez](https://mirnavazquez.netlify.app/)
+
+Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
+
+<img src="https://valdeanda.github.io/Useful_scripts/bubble_Plot.png" width="400" height="300" align="right">
+
+
+Look at the the example input data for the script [here]
+(https://github.com/valdeanda/Useful_scripts/input_bubblePlot_AbsoluteFinal_2.tsvinput_bubblePlot_AbsoluteFinal_2.tsv)
+
+
 # Heatmap 
 
 <img src="https://valdeanda.github.io/Useful_scripts/clustermap.png" width="300" height="450" align="right">
@@ -116,7 +129,7 @@ Example:
 R script that was used to plot the number of achaeal genomes by taxonomy described in [Baker et al., 2020](https://www.nature.com/articles/s41564-020-0715-z)
 
 The input data data_barplot.tab, looks like this, the scripts keeps the specific order that you want your data to sorted.
-Dr. Craig Connolly provided valuable input to generate the script. 
+
 
 ```
 Phylum	Superphylum	Number of genomes
