@@ -90,6 +90,20 @@ cmap='coolwarm_r'
 Author:  [Mirna Vazquez](https://mirnavazquez.netlify.app/)
 
 Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
+Library implemented in Rbims 
+
+
+```
+Requires
+library(tidyverse)
+library(janitor)
+#Change the input data frame
+data_to_plot<-read_delim("input_bubblePlot_AbsoluteFinal_2.tsv", 
+                         delim = "\t") %>%
+  clean_names()
+
+```
+If you want to use this function implemented in Rbims to explore metabolism annotation in genomes or MAGs, see [rbims package](https://github.com/mirnavazquez/RbiMs)
 
 <img src="https://valdeanda.github.io/Useful_scripts/bubble_Plot.png" width="400" height="300" align="right">
 
