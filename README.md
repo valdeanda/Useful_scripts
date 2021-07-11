@@ -87,6 +87,8 @@ cmap='coolwarm_r'
 
 ## Bubble plot
 
+<img src="https://valdeanda.github.io/Useful_scripts/bubble_Plot.png" width="400" height="300" align="right">
+
 Author:  [Mirna Vazquez](https://mirnavazquez.netlify.app/)
 
 Scrip to create a bubble chart from any dataframe contanining either normalized or absolute values. 
@@ -105,7 +107,6 @@ data_to_plot<-read_delim("input_bubblePlot_AbsoluteFinal_2.tsv",
 ```
 If you want to use this function implemented in Rbims to explore metabolism annotation in genomes or MAGs, see [rbims package](https://github.com/mirnavazquez/RbiMs)
 
-<img src="https://valdeanda.github.io/Useful_scripts/bubble_Plot.png" width="400" height="300" align="right">
 
 
 Look at the the example input data for the script [here](https://github.com/valdeanda/Useful_scripts/input_bubblePlot_AbsoluteFinal_2.tsvinput_bubblePlot_AbsoluteFinal_2.tsv/)
