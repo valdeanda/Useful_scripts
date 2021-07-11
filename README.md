@@ -91,8 +91,9 @@ Scrip to create a bubble chart from any dataframe contanining either normalized 
 <img src="https://valdeanda.github.io/Useful_scripts/bubble_Plot.png" width="400" height="300" align="right">
 
 
-Look at the the example input data for the script [here]
-(https://github.com/valdeanda/Useful_scripts/input_bubblePlot_AbsoluteFinal_2.tsvinput_bubblePlot_AbsoluteFinal_2.tsv)
+Look at the the example input data for the script [here](https://github.com/valdeanda/Useful_scripts/input_bubblePlot_AbsoluteFinal_2.tsvinput_bubblePlot_AbsoluteFinal_2.tsv/)
+
+---
 
 
 # Heatmap 
