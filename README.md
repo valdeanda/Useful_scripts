@@ -733,3 +733,5 @@ efetch -db protein -format fasta -id ABO08866.1,AFA39020.1,AFA39042.1,AFI78392.1
 #Run the new script
 bash list.sh > list.fa
 ```
+
+https://www.metagenomics.wiki/tools/blast/blastn-output-format-6
