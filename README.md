@@ -322,7 +322,7 @@ perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=
 ---
 
 
-## Keep sequences of certain lenght 
+## Keep sequences of certain length 
 
 In this case we are keeping sequences >100 bp
 
@@ -735,3 +735,47 @@ bash list.sh > list.fa
 ```
 
 https://www.metagenomics.wiki/tools/blast/blastn-output-format-6
+
+## Map reads to an assembly
+
+You will need to use samtools >= 1.9 and bwa >= 0.7.17
+If the versions of these tools are outdated on the server, use Conda for a mapping environment.
+
+```bash
+env_name=mapping_env; conda create -n $env_name && \
+conda activate $env_name && \
+conda install -c bioconda bwa=0.7.17 samtools=1.9 && \
+echo "SUCCESS"
+```
+
+```bash
+#see the available parameters
+bash bwa_bam_map.sh -h
+
+#assembly we want to map to
+#we can map to a combined FASTA containing multiple MAGs in this case
+genomes_combined.fna
+
+#reads we want to map
+Meg22_1012.fastq.gz
+
+#you can assign an identifier for the run with -s, the output bam and bam index filenames will contain this string
+
+#ensure -b and -k (number of threads for bwa and samtools) do not exceed the number displayed with nproc
+
+bash bwa_bam_map.sh -i genomes_combined.fna -r Meg22_1012.fastq.gz -o read_mapping_output_dir -s genomes_combined-Meg22_1012 -b 40 -k 40 -t /home/profile/tmp -e read_mapping_output_dir/error
+
+```
+
+This will output coordinate-sorted BAM files, and a BAM index file
+
+## Check BAM files for file integrity and proper sorting
+
+You will need to use samtools >= 1.9
+
+```bash
+
+bash bam_check.sh -b <directory with BAM files> -o <output directory> -j <number of parallel tests> -n <pattern of BAMs, e.g. Meg22*.bam . Omitting this will analyze all files ending with .bam in the directory>
+```
+
+
