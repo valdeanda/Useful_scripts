@@ -13,6 +13,7 @@ Many of the scripts have been written by my dear friends a collaborators:
 * [Cesar Poot UNAM](https://github.com/acpooth)
 * [Bruno Contreras EMBL](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira)
 * [Carlos Cantalapiedra](http://www.cbgp.upm.es/index.php/es/?option=com_content&view=article&id=18&x=2436)
+* [Ian Rambo](https://www.linkedin.com/in/ian-rambo-77a17b58/)
 
 
 ## Dependencies
