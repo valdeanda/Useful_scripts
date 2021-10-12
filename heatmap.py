@@ -2,16 +2,18 @@
 # -*- coding: utf-8 -*-
 #
 # ------------------------------
-# Name:
-# Purpose:
+# Name: heatmap.py
+# Purpose: Create a clustermap (clustered heatmap with dendrograms)
 #
 # @uthor:   acph - dragopoot@gmail.com
 #
 # Created:
 # Copyright:   (c) acph 2015
 # Licence:     GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
+# Modified:    October 12, 2021
+# Modified by: Ian Rambo (imrambo)
 # ------------------------------
-""" This script create a cluster map """
+""" This script creates a cluster map """
 
 import argparse
 import numpy as np
@@ -39,7 +41,9 @@ def argparser():
                         help='''Output resolution for images in
                         dot per inch (dpi) [dpi].''',
                         metavar='dpi')
-    # parser.add_argument('-o', '--outfig') # outfile
+
+    parser.add_argument('-o', '--outfig', required = False,
+                        help = 'Specified filename for output heatmap')
     # parser.add_argument('') # cluster files
     # parser.add_argument('') # distance metric
     # parser.add_argument('') # linkage method
@@ -103,7 +107,7 @@ def main():
     # posm_colors = [0.215, 0.01, 0.02, 0.82]
     # poscbar = [0.92, 0.01, 0.015, 0.40]
 
-    # new with labesl
+    # new with labels
     posm = [0.01, 0.23, 0.2, 0.62]
     posp = [0.24, 0.855, 0.67, 0.14]
     posmat = [0.24, 0.23, 0.67, 0.62]
@@ -112,14 +116,14 @@ def main():
     poscbar = [0.92, 0.23, 0.015, 0.30]
     poslegend = [0.01, 0.84, 0.23, 0.15]
 
-    # colors for dendograms
+    # colors for dendrograms
     sch.set_link_color_palette(['#1f77b4', '#ff7f0e',
                                 '#2ca02c', '#d62728',
                                 '#9467bd', '#8c564b',
                                 '#e377c2', '#7f7f7f',
                                 '#bcbd22', '#17becf'])
 
-    # # - rows dendogram
+    # # - rows dendrogram
     meta_ax = fig.add_axes(posm, frameon=False)
     metadend = sch.dendrogram(metalink,
                               color_threshold=0.2 * max(metalink[:, 2]),
@@ -127,7 +131,7 @@ def main():
     meta_ax.set_xticks([])
     meta_ax.set_yticks([])
 
-    # # - columns dendogram
+    # # - columns dendrogram
     prof_ax = fig.add_axes(posp, frameon=False)
     profdend = sch.dendrogram(proflink,
                               color_threshold=0.2 * max(proflink[:, 2]),
@@ -137,16 +141,19 @@ def main():
 
     # # - Matrix - HEATMAP
     matrix_ax = fig.add_axes(posmat)
-    mat = data.get_values()
     mmask = metadend['leaves']
     pmask = profdend['leaves']
+
+    #mat = data.get_values()
+    mat = data.to_numpy()
+
     mat = mat[mmask, :]
     mat = mat[:, pmask]
     im = matrix_ax.matshow(mat, aspect='auto', origin='lower', cmap='viridis')
 # ****************************************************************************
 # *  Here we can add options to show labels - needs to modify axes positions *
 # ****************************************************************************
-    # Etiquetas
+    # Labels
     matrix_ax.set_yticks([])
     matrix_ax.set_xticks(range(len(data.columns)))
     matrix_ax.set_xticklabels(data.columns[pmask], rotation=90,
@@ -199,6 +206,14 @@ def main():
     # plt.show()
     # # - Save Figure
     figname = 'heatmap.{}'.format(args.im_format)
+
+    if args.outfig:
+        figname = str(args.outfig)
+    else:
+        pass
+
+    print('[INFO] Output figure will be saved to {}'.format(figname))
+
     fig.savefig(figname, dpi=args.im_res)
 
 # ****************************************************************************
@@ -209,39 +224,6 @@ def main():
     # clustdata.to_csv('matdata_clust_pru.txt', sep='\t')
 
 
-
 if __name__ == '__main__':
     main()
     print('[INFO] End!!!. Thanks for using :D')
-
-
-
-
-# ****************************************************************************
-# *                                T R A S H                                 *
-# ****************************************************************************
-
-
-
-
-    # # loadign and creating top pfam
-    # def labels_names(data, namelist):
-    #     """Plot in x label the names in list
-
-    #     Arguments:
-    #     - `data`: panda DataFrame
-    #     - `namelist`: a python list of names. Must be contained in
-    #     pandas data.columns
-    #     """
-    #     labels = []
-    #     for col in data.columns:
-    #         if col in namelist:
-    #             labels.append(col)
-    #         else:
-    #             labels.append('')
-    #     return np.array(labels)
-
-    # top_pfam = pd.read_table('top_pfam_profiles.txt', index_col=0)
-    # top_p = list(top_pfam.index)
-    # labs = labels_names(data, top_p)
-    # labs = labs[pmask]

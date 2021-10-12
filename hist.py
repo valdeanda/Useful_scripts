@@ -48,7 +48,7 @@ ax = sns.distplot(df, rug=True, rug_kws={"color": "b"},
                   hist_kws={"histtype": "step", "linewidth": 3,
                   "alpha": 1, "color": "b"})
 plt.title(str(args.filename), fontweight='bold')
-plt.ylabel('Density)', fontweight='bold')
-plt.xlabel('Lenght', fontweight='bold')
+plt.ylabel('Density', fontweight='bold')
+plt.xlabel('Length', fontweight='bold')
 plt.tight_layout()
 plt.savefig(args.filename + "_hisplot." + args.im_format, dpi=args.im_res, bbox_inches='tight')
