@@ -18,7 +18,7 @@ Many of the scripts have been written by my dear friends a collaborators:
 
 ## Dependencies
 
-Before using any of the scripts make sure that you have install the following dependencies
+For some of the scripts you have install the following dependencies
 
 ```bash
 sudo apt-get install python3 python3-pip python3-matplotlib \
