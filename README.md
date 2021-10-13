@@ -139,6 +139,14 @@ optional arguments:
 Example:
     $  python3 heatmap.py data.heatmap.tsv
 ```
+```
+For Mac OSX users:
+Create a conda environment for heatmap.py using the included .yml file heatmap_env_conda_osx.yml:
+
+conda env create -f heatmap_env_conda_osx.yml
+
+A Linux environment will be provided soon.
+```
 
 ---
 ## Horizontal Barplot 
