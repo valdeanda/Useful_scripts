@@ -764,7 +764,9 @@ If not, run following command
 #index assembly we want to map to
 #combined FASTA containing multiple MAGs in this case
 bwa index genomes_combined.fna
+```
 
+```bash
 #see the available parameters
 bash bwa_bam_map.sh -h
 
