@@ -757,7 +757,14 @@ conda install -c bioconda bwa=0.7.17 samtools=1.9 && \
 echo "SUCCESS"
 ```
 
+You will need the index files in the same location as the fasta assembly file. 
+If not, run following command
+
 ```bash
+#index assembly we want to map to
+#combined FASTA containing multiple MAGs in this case
+bwa index genomes_combined.fna
+
 #see the available parameters
 bash bwa_bam_map.sh -h
 
