@@ -168,13 +168,20 @@ def main():
 
     # # - Color code
     # Get colors from the first element in the index
+    # general_index = sorted(pd.MultiIndex.to_frame(data.index)[0].unique(),
+    #     key=lambda x: int(x[1:]))
+
+    #Sort the taxonomic groups for color assignment
     general_index = sorted(pd.MultiIndex.to_frame(data.index)[0].unique(),
-        key=lambda x: int(x[1:]))
+        key=str.lower)
+
+    print(general_index)
     color_as = {}
     for i, v in enumerate(range(len(general_index))):
         icolor = plt.cm.tab20(v / len(general_index))
         color_as[general_index[i]] = icolor
     # color vector
+    print(color_as)
     color_vec = [color_as[i[0]] for i in data.index]
     color_vec = np.array(color_vec)
     color_vec = color_vec[mmask]
