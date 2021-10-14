@@ -93,13 +93,16 @@ fi
 ## Samtools quickcheck - check for BAM integrity
 echo "running samtools quickcheck to verify BAM integrity -- $(date +"%D %T")" >> $progress_log
 
-find $bam_dir -type f -name "*.bam" | parallel --joblog $joblog_quickcheck --jobs $njobs samtools quickcheck {} && \
+# find $bam_dir -type f -name "*.bam" | \
+find $bam_dir -type f -name $bam_name | \
+    parallel --joblog $joblog_quickcheck --jobs $njobs samtools quickcheck {} && \
     tail -n +2 $joblog | awk '$7 != 0' > $report_quickcheck && \
     echo "BAM integrity samtools quickcheck test completed -- $(date +"%D %T")" >> $progress_log
 #=============================================================================
 ## Samtools stats - check for proper coordinate sorting
 echo "running $njobs parallel samtools stats jobs to check if BAMs are properly sorted -- $(date +"%D %T")" >> $progress_log
-find . -type f -name "*.bam" | \
+#find . -type f -name "*.bam" | \
+find $bam_dir -type f -name $bam_name | \
     parallel --joblog $joblog --jobs $njobs samtools stats {} '|' grep -E \"^SN\" '|' cut -f 2- '|' grep -q -E \"is sorted\:[[:space:]]+1\" && \
     tail -n +2 $joblog | awk '$7 != 0' > $report_sorted && \
     echo "BAM sorting samtools stats test completed -- $(date +"%D %T")" >> $progress_log
