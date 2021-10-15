@@ -1,13 +1,14 @@
 #!/bin/bash
 # Ian Rambo - July 22, 2021
+# Last updated - Oct 14, 2021
 # Thirteen... that's a mighty unlucky number... for somebody!
 
 
 #Purpose: check BAM files for integrity and coordinate sorting
 
-#Usage: bash bam_check.sh <file with BAMs> <output directory> <number of parallel jobs>
+#Usage: bash bam_check.sh -b <directory with BAM files> -o <output directory> -j <number of BAMs to process in parallel> -n "filename pattern for find command"
 
-## Requiements:
+## Requirements:
 ## samtools >= 1.9
 ## GNU parallel
 
@@ -96,15 +97,15 @@ echo "running samtools quickcheck to verify BAM integrity -- $(date +"%D %T")" >
 # find $bam_dir -type f -name "*.bam" | \
 find $bam_dir -type f -name $bam_name | \
     parallel --joblog $joblog_quickcheck --jobs $njobs samtools quickcheck {} && \
-    tail -n +2 $joblog | awk '$7 != 0' > $report_quickcheck && \
+    tail -n +2 $joblog_quickcheck | awk '$7 != 0' > $report_quickcheck && \
     echo "BAM integrity samtools quickcheck test completed -- $(date +"%D %T")" >> $progress_log
 #=============================================================================
 ## Samtools stats - check for proper coordinate sorting
 echo "running $njobs parallel samtools stats jobs to check if BAMs are properly sorted -- $(date +"%D %T")" >> $progress_log
 #find . -type f -name "*.bam" | \
 find $bam_dir -type f -name $bam_name | \
-    parallel --joblog $joblog --jobs $njobs samtools stats {} '|' grep -E \"^SN\" '|' cut -f 2- '|' grep -q -E \"is sorted\:[[:space:]]+1\" && \
-    tail -n +2 $joblog | awk '$7 != 0' > $report_sorted && \
+    parallel --joblog $joblog_sorted --jobs $njobs samtools stats {} '|' grep -E \"^SN\" '|' cut -f 2- '|' grep -q -E \"is sorted\:[[:space:]]+1\" && \
+    tail -n +2 $joblog_sorted | awk '$7 != 0' > $report_sorted && \
     echo "BAM sorting samtools stats test completed -- $(date +"%D %T")" >> $progress_log
 
 echo "COMPLETED -- $(date +"%D %T")" >> $progress_log
