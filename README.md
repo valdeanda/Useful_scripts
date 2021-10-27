@@ -15,6 +15,12 @@ Many of the scripts have been written by my dear friends a collaborators:
 * [Carlos Cantalapiedra](http://www.cbgp.upm.es/index.php/es/?option=com_content&view=article&id=18&x=2436)
 * [Ian Rambo](https://www.linkedin.com/in/ian-rambo-77a17b58/)
 
+## Resources
+
+*  [Essenntial skills for Bionformatics presentation Laboratory of Single Cell Genomics Department of New Biology,
+Daegu Gyeongbuk Institute of Science and Technology Korea](https://scg.dgist.ac.kr/wp-content/uploads/2017/02/20170330.pdf)
+
+
 
 ## Dependencies
 
