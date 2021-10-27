@@ -340,7 +340,7 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (k
 ```
 ---
 
-## Change the headers with the name of the name of fasta file
+## Change the headers for fasta file name
 
 ```perl
  perl -lne 'if(/^>(\S+)/){ print ">$ARGV $1"} else{ print }' file.fa > file_renamed.fa
