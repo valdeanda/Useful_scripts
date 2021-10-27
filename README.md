@@ -377,7 +377,11 @@ Option 2 grep
 ```bash
 grep -v -f sequence_to_remove.txt file.fa  > file_filtered.fa 
 ```
+Option 3 awk
 
+```bash
+awk 'BEGIN{while((getline<"sequence_to_remove.txt")>0)l[">"$1]=1}/^>/{f=!l[$1]}f' file.fa > file_filtered.fa
+```
 ---
 
 ## Extract fasta sequences from list of headers
