@@ -397,7 +397,7 @@ awk 'BEGIN{while((getline<"sequence_to_remove.txt")>0)l[">"$1]=1}/^>/{f=!l[$1]}f
 
 Option 3 grep  
   
-Remove only the headers not the entire scaffold if working with metagenomic data
+Remove only the headers not the entire scaffold if working with metagenomic data.
   
 ```bash
 grep -v -f sequence_to_remove.txt file.fa  > file_filtered.fa 
