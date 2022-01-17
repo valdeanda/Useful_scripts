@@ -370,7 +370,16 @@ grep -c ">" *.faa  | sed 's/:/\t/g' | cut -f 2 | Rscript -e 'data=abs(scan(file=
 
 ## Remove fasta sequences from list of headers
 
-It requires a list of headeres to remove from a fasta file  
+It requires a list of headers to remove from a fasta file  
+
+List of headers to remove example (sequence_to_remove.txt):
+
+```bash
+scaffold_142207_c1_687
+scaffold_98552_c1_471
+scaffold_70258_c1_330
+scaffold_155515_c1_771
+```
 
 Option 1 python script 
 
@@ -378,15 +387,18 @@ Option 1 python script
 python3 remove_sequences.py file.fa sequence_to_remove.txt > file_filtered.fa 
 ```
 
-Option 2 grep
-
-```bash
-grep -v -f sequence_to_remove.txt file.fa  > file_filtered.fa 
-```
-Option 3 awk
+Option 2 awk
+Formating will be different since awk adds spaces, but sequence will be the same as Option 1.
 
 ```bash
 awk 'BEGIN{while((getline<"sequence_to_remove.txt")>0)l[">"$1]=1}/^>/{f=!l[$1]}f' file.fa > file_filtered.fa
+```
+
+Option 3 grep
+Remove only the headers not the entire scaffold if working with metagenomic data
+
+```bash
+grep -v -f sequence_to_remove.txt file.fa  > file_filtered.fa 
 ```
 ---
 
