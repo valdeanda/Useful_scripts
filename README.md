@@ -387,16 +387,18 @@ Option 1 python script
 python3 remove_sequences.py file.fa sequence_to_remove.txt > file_filtered.fa 
 ```
 
-Option 2 awk
+Option 2 awk  
+  
 Formating will be different since awk adds spaces, but sequence will be the same as Option 1.
-
+  
 ```bash
 awk 'BEGIN{while((getline<"sequence_to_remove.txt")>0)l[">"$1]=1}/^>/{f=!l[$1]}f' file.fa > file_filtered.fa
 ```
 
-Option 3 grep
+Option 3 grep  
+  
 Remove only the headers not the entire scaffold if working with metagenomic data
-
+  
 ```bash
 grep -v -f sequence_to_remove.txt file.fa  > file_filtered.fa 
 ```
