@@ -301,9 +301,8 @@ The output looks like this
 ```
 
 2. perl Usage: get_gc_content.pl <fasta file>
-
 	
-
+```
 	This program takes a fasta file as it's first (and only) parameter.
 
 It returns a tab delimited file (gc_out.txt): column 1 = header ID (everything between ">"
@@ -321,6 +320,7 @@ This script now also returns the total nucleotide count, along with the number o
 ```
 
 ---
+	
 ## Generate sequence length file from multifasta
 
 **Option 1 awk**
