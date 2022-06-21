@@ -286,7 +286,9 @@ for i in *.tab; do awk '{sum+= $2; n++ } END { if (n > 0) print sum / n; }' $i >
 
 I provide 2 scripts to compute GC content in fasta files. The scripts take a fasta file as the only parameter 
 
-1. perl GC-content.pl <fasta file>
+1. GC-content.pl
+
+Usage: perl GC-content.pl <fasta file>
 
 ```
 The output looks like this
@@ -300,22 +302,15 @@ The output looks like this
  GC Content is: 10.0394230590195 %
 ```
 
-2. perl Usage: get_gc_content.pl <fasta file>
+2. get_gc_content.pl
+	
+Usage: perl get_gc_content.pl <fasta file>
 	
 ```
 	This program takes a fasta file as it's first (and only) parameter.
 
 It returns a tab delimited file (gc_out.txt): column 1 = header ID (everything between ">"
 and the first space in the header), and column 2 = gc content for the fasta entry.
-
-Jennifer Meneghin
-July 23, 2009
-
-Updated September 20, 2010:
-This script now works properly with sequences that contain spaces.
-
-Updated September 21, 2010:
-This script now also returns the total nucleotide count, along with the number of of A's, G's, C's and T's for each fasta record.
 
 ```
 
