@@ -1,26 +1,14 @@
 # Useful scripts
 
-This repository contains useful tips/tricks/scripts that I have picked up over the years. 
-The are scripts written in 
-- bash 
-- awk
-- perl 
-- R
-- python3
-
-Many of the scripts have been written by my dear friends a collaborators:
+This repository contains useful tips/tricks/scripts that I have picked up or developed over the years. 
+The scripts are mainly written in (`bash`, `awk`,`perl`,`R`,python`), and some of them have been written by by my dear friends and collaborators:
 
 * [Cesar Poot UNAM](https://github.com/acpooth)
 * [Bruno Contreras EMBL](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira)
 * [Carlos Cantalapiedra](http://www.cbgp.upm.es/index.php/es/?option=com_content&view=article&id=18&x=2436)
 * [Ian Rambo](https://www.linkedin.com/in/ian-rambo-77a17b58/)
 
-## Resources
-
-*  [Essenntial skills for Bionformatics presentation Laboratory of Single Cell Genomics Department of New Biology,
-Daegu Gyeongbuk Institute of Science and Technology Korea](https://scg.dgist.ac.kr/wp-content/uploads/2017/02/20170330.pdf)
-
-
+---
 
 ## Dependencies
 
@@ -253,7 +241,7 @@ for i in *.tab; do awk '{sum+= $2; n++ } END { if (n > 0) print sum / n; }' $i >
 
 ## Compute GC content
 
-I provide 2 scripts to compute GC content in fasta files. The scripts take a fasta file as the only parameter 
+I provide 2 scripts to compute the GC content of  fasta sequences. The scripts takes a fasta file as the only parameter 
 
 1. GC-content.pl
 
@@ -821,5 +809,11 @@ You will need to use samtools >= 1.9
 
 bash bam_check.sh -b <directory with BAM files> -o <output directory> -j <number of parallel tests> -n <pattern of BAMs, e.g. Meg22*.bam . Omitting this will analyze all files ending with .bam in the directory>
 ```
+
+
+## Resources
+
+*  [Essenntial skills for Bionformatics presentation Laboratory of Single Cell Genomics Department of New Biology,
+Daegu Gyeongbuk Institute of Science and Technology Korea](https://scg.dgist.ac.kr/wp-content/uploads/2017/02/20170330.pdf)
 
 
