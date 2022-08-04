@@ -1,7 +1,7 @@
 # Useful scripts
 
 This repository contains useful tips/tricks/scripts that I have picked up or developed over the years. 
-The scripts are mainly written in (`bash`, `awk`,`perl`,`R`,python`), and some of them have been written by by my dear friends and collaborators:
+The scripts are mainly written in (`bash`, `awk`,`perl`,`R`,`python`), and some of them have been written by by my dear friends and collaborators:
 
 * [Cesar Poot UNAM](https://github.com/acpooth)
 * [Bruno Contreras EMBL](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira)
