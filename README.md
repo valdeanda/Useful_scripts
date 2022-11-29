@@ -222,6 +222,13 @@ optional arguments:
 ```
 ---
 
+## Rename headers based on input mapping file 
+
+From [Tejashree Modak](https://tejashree1modak.github.io/bioblogs/fasta_rename/)
+
+```
+python3 rename.py --mapping-file MappingFile.csv -i input.fasta -o output.fasta
+```
 
 ## Multifasta general stats 
 
